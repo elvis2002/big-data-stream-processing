@@ -1,4 +1,4 @@
-# 大数据－流式处理解决方案－ v1.0
+# 大数据－流式处理解决方案（SMACK/FkACK）－ v1.0
 
 ![](https://img.shields.io/badge/Release-v1.0-green.svg)
 [![](https://img.shields.io/badge/Producer-elvis2002-orange.svg)](CONTRIBUTORS.md)
@@ -40,8 +40,11 @@
 
 *Debuggable（易调试）
 
-# <a name="大数据处理技术堆栈"></a>大数据处理技术堆栈
+# <a name="大数据技术堆栈"></a>大数据技术堆栈
 
+    hdfs、mapreduce、yarn、zookeeper、Oozie、Flume、Sqoop、Hive、Hbase、Solr Spark、Storm、Kafka
+    
+    在流式处理中大多数利用spark steaming 或 flink去处理
 
 # <a name="SMACK/FkACK－结构图"></a>SMACK/FkACK－结构图
 
