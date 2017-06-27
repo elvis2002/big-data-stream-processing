@@ -1,4 +1,4 @@
-# [云框架]基于SMACK的大数据架构 v1.0
+# 大数据－流式处理解决方案－ v1.0
 
 ![](https://img.shields.io/badge/Release-v1.0-green.svg)
 [![](https://img.shields.io/badge/Producer-elvis2002-orange.svg)](CONTRIBUTORS.md)
@@ -37,7 +37,7 @@
 
 # <a name="SMACK－结构图"></a>SMACK－结构图
 
-<div align=center><img width="900" height="" src="./image/smack_arch.png"/></div>
+<div align=center><img width="900" height="" src="userguide/image/smack_arch.png"/></div>
 
 # <a name="模型 — Akka"></a>模型 — Akka
 
@@ -127,14 +127,14 @@
 
 # <a name="数据管道结构图"></a>数据管道结构图
 
-<div align=center><img width="900" height="" src="./image/pipeline.png"/></div>
+<div align=center><img width="900" height="" src="userguide/image/pipeline.png"/></div>
 
 总结：基于Spark Mesos Akka Cassandra Kafka这样的组合(SMACK），利用其成熟的技术去对应不同场景。更关键在于他们的易用和自由组合，自动化程度高。基于它构建一个平台，灵活性很难被击败。
 
 
 # <a name="User Case"></a>User Case
 
-<div align=center><img width="900" height="" src="./image/usecase.png"/></div>
+<div align=center><img width="900" height="" src="userguide/image/usecase.png"/></div>
 
 -------
 
