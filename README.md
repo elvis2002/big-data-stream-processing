@@ -17,8 +17,10 @@
 # <a name="Lambda架构"></a>Lambda架构
 
     Lambda架构是数据处理架构，旨在通过采取批处理和流处理方法的优势来处理大规模数据的数量。 Lambda架构的目标是设计出一个
+    
     能满足实时大数据系统关键特性的架构，包括有：高容错、低延时和可扩展等。Lambda架构整合离线计算和实时计算，融合不可变性
-    （Immunability），读写分离和复杂性隔离等一系列架构原则
+    
+    读写分离和复杂性隔离等一系列架构原则
     
 # <a name="大数据系统的关键特性"></a>大数据系统的关键特性
 
@@ -38,7 +40,10 @@
 
 *Debuggable（易调试）
 
-# <a name="SMACK－结构图"></a>SMACK－结构图
+# <a name="大数据处理技术堆栈"></a>大数据处理技术堆栈
+
+
+# <a name="SMACK/FkACK－结构图"></a>SMACK/FkACK－结构图
 
 <div align=center><img width="900" height="" src="userguide/image/smack_arch.png"/></div>
 
