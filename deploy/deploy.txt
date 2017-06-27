@@ -1,0 +1,38 @@
+docker run -d -e POD_NET_IP=172.17.0.5 --publish 8080:8080 spark_master:2.7.3_2.10_1 /opt/bin/start.sh
+
+docker run -d -e POD_NET_IP=172.17.0.5 spark_slave:2.7.3_2.10_1 /opt/bin/start.sh
+
+
+
+docker run -d --name zookeeper --publish 2181:2181 \
+--volume /etc/localtime:/etc/localtime \
+zookeeper:latest
+
+docker run -d --name=kafka \
+--link zookeeper:zookeeper \
+kafka:latest /opt/bin/start.sh
+
+docker run -d --name cassandra --publish 9042:9042 cassandra:latest
+
+docker run -d --name influxdb --publish 8083:8083 --publish 8086:8086 influxdb:1.2.4
+
+docker run -d \
+--link cassandra:cassandra \
+--link influxdb:influxdb \
+--link kafka:kafka \
+flink:latest /opt/bin/start.sh
+
+
+docker run -d --publish 9090:9090 \
+--link kafka:kafka \
+akka:latest /opt/bin/start.sh instream
+
+
+docker run -d --publish 9091:9091 \
+--link cassandra:cassandra \
+akka:latest /opt/bin/start.sh outstream
+
+
+
+
+docker run -d --publish 3000:3000 grafana/grafana:latest
