@@ -2,6 +2,9 @@ docker run -d -e POD_NET_IP=172.17.0.5 --publish 8080:8080 spark_master:2.7.3_2.
 
 docker run -d -e POD_NET_IP=172.17.0.5 spark_slave:2.7.3_2.10_1 /opt/bin/start.sh
 
+docker run -d --name spark_master --link cassandra:cassandra --publish 8080:8080 spark_master:2.7.3_2.10_2 /opt/bin/start.sh
+
+docker run -d --link spark_master:spark_master --link cassandra:cassandra spark_slave:2.7.3_2.10_2 /opt/bin/start.sh
 
 
 docker run -d --name zookeeper --publish 2181:2181 \
@@ -25,7 +28,7 @@ flink:latest /opt/bin/start.sh
 
 docker run -d --publish 9090:9090 \
 --link kafka:kafka \
---link flink:flink \
+--link flink:rpc \
 akka:latest /opt/bin/start.sh instream
 
 
@@ -34,5 +37,13 @@ docker run -d --publish 9091:9091 \
 --link flink:flink \
 akka:latest /opt/bin/start.sh outstream
 
-
 docker run -d --publish 3000:3000 grafana/grafana:latest
+
+
+docker run -d --name spark_app --link spark_master:spark_master --link cassandra:cassandra spark_app /opt/bin/start.sh
+
+
+docker run -d --publish 9090:9090 \
+--link kafka:kafka \
+--link spark_app:rpc \
+akka:latest /opt/bin/start.sh instream

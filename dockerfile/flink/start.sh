@@ -1,5 +1,7 @@
 #!/bin/bash
 
+C_HOST=`/sbin/ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:"`
+
 /opt/flink/bin/start-local.sh
 
 sleep 2
@@ -60,4 +62,4 @@ sleep 2
 --classpath file:////opt/flink-app/lib/scopt_2.11-3.2.0.jar \
 --classpath file:////opt/flink-app/lib/slf4j-api-1.7.16.jar \
 --classpath file:////opt/flink-app/lib/slf4j-log4j12-1.7.24.jar \
-//opt/flink-app/flink-consumer.jar
+//opt/flink-app/flink-consumer.jar $C_HOST

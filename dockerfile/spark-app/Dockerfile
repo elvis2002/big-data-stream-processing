@@ -1,4 +1,4 @@
-FROM spark_master:2.7.3_2.10_1
+FROM spark_master:2.7.3_2.10_2
 
 RUN mkdir -p /opt/bin
 
