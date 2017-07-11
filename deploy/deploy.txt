@@ -17,13 +17,13 @@ kafka:latest /opt/bin/start.sh
 
 docker run -d --name cassandra --publish 9042:9042 cassandra:latest
 
-docker run -d --name influxdb --publish 8083:8083 --publish 8086:8086 influxdb:1.2.4
+docker run -d --name influxdb --publish 8083:8083 --publish 8086:8086 smack/influxdb:1.2.4
 
 docker run -d --name=flink \
 --link cassandra:cassandra \
 --link influxdb:influxdb \
 --link kafka:kafka \
-flink:latest /opt/bin/start.sh
+smack/flink:1.0 /opt/bin/start.sh
 
 
 docker run -d --publish 9090:9090 \
@@ -37,7 +37,7 @@ docker run -d --publish 9091:9091 \
 --link flink:flink \
 akka:latest /opt/bin/start.sh outstream
 
-docker run -d --publish 3000:3000 grafana/grafana:latest
+docker run -d --publish 3000:3000 smack/grafana:1.0
 
 
 docker run -d --name spark_app --link spark_master:spark_master --link cassandra:cassandra spark_app /opt/bin/start.sh

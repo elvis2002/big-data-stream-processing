@@ -1,16 +1,6 @@
 CREATE KEYSPACE mydb WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
 
 CREATE TABLE mydb.nginx_log (
-    id uuid ,
-    namespace varchar,
-    servername varchar,
-    log varchar,
-    primary key(id,namespace,servername));
-    
-
-CREATE KEYSPACE mydb WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
-
-CREATE TABLE mydb.nginx_log (
     namespace varchar,
     servername varchar,
     create_time timestamp,
