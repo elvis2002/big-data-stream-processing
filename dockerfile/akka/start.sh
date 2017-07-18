@@ -12,8 +12,8 @@ echo $RPC_HOST
 
 if [ $1 = "outstream" ]; then
    sed -i "s#RPC_HOST#$RPC_HOST#" /opt/akka/config/data-output.conf
-   java -Dfile.encoding=utf8 -cp /opt/akka/lib/*:/opt/akka/config/:/opt/akka/smack-akka.jar com.smack.DataOutputServer 2551
+   java -Dfile.encoding=utf8 -cp /opt/akka/ext/*:/opt/akka/lib/*:/opt/akka/config/:/opt/akka/smack-akka.jar com.smack.DataOutputServer 2551
 else
     sed -i "s#RPC_HOST#$RPC_HOST#" /opt/akka/config/data-input.conf
-    java -Dfile.encoding=utf8 -cp /opt/akka/lib/*:/opt/akka/config/:/opt/akka/smack-akka.jar com.smack.DataInputServer 2551
+    java -Dfile.encoding=utf8 -cp /opt/akka/ext/*:/opt/akka/lib/*:/opt/akka/config/:/opt/akka/smack-akka.jar com.smack.DataInputServer 2551
 fi
