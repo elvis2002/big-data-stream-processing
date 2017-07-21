@@ -1,0 +1,11 @@
+CREATE KEYSPACE if not exists mydb WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
+
+CREATE TABLE if not exists mydb.nginx_log (namespace varchar,servername varchar,create_time timestamp,log varchar,primary key(namespace,servername,create_time));
+    
+CREATE TABLE if not exists mydb.nginx_base_log (namespace varchar,servername varchar,remoteaddr varchar,remoteuser varchar,timeLocal varchar,request varchar,status int,bodySize int,httpreferer varchar,httpuseragent varchar,httpxforwardedfor varchar,requestlength int,upstreamresponsetime double,upstreamaddr varchar,create_time timestamp,update_time timestamp, primary key(namespace,servername,create_time,update_time));
+    
+CREATE TABLE if not exists mydb.status_real_statics (namespace varchar,servername varchar,status int,start_time varchar,end_time varchar,num int,create_time timestamp,primary key(namespace,servername,create_time,status));
+    
+CREATE TABLE if not exists mydb.request_real_statics (namespace varchar,servername varchar,request varchar,start_time varchar,end_time varchar,num int,avg_time double,create_time timestamp,primary key(namespace,servername,create_time,request));
+    
+CREATE TABLE if not exists mydb.request_bath_statics (namespace varchar,servername varchar,request varchar,num int,create_time timestamp,primary key(namespace,servername,create_time,request));
