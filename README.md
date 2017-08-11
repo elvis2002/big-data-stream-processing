@@ -40,6 +40,7 @@
 
 *Debuggable（易调试）
 
+
 # <a name="大数据技术堆栈"></a>大数据技术堆栈
 
     hdfs、mapreduce、yarn、zookeeper、Oozie、Flume、Sqoop、Hive、Hbase、Solr Spark、Storm、Kafka
@@ -49,6 +50,10 @@
 # <a name="SMACK/FkACK－结构图"></a>SMACK/FkACK－结构图
 
 <div align=center><img width="900" height="" src="userguide/image/smack_arch.png"/></div>
+
+# <a name="SMACK/FkACK－特点"></a>SMACK/FkACK－特点
+
+<div align=center><img width="900" height="" src="userguide/image/feather.png"/></div>
 
 # <a name="模型 — Akka"></a>模型 — Akka
 
@@ -125,6 +130,7 @@
 *Docker
 
 # <a name="数据管道"></a>数据管道
+
 *Spark and Cassandra 
 
 *Akka and Kafka 
@@ -143,10 +149,31 @@
 总结：基于Spark Mesos Akka Cassandra Kafka这样的组合(SMACK），利用其成熟的技术去对应不同场景。更关键在于他们的易用和自由组合，自动化程度高。基于它构建一个平台，灵活性很难被击败。
 
 
+# <a name="快数据"></a>快数据应用解决了三大难题
+
+*数据流分析
+
+*数据流水线
+
+*实时用户互动
+
+
+# <a name="快数据特征"></a>快数据特征
+
+*快速摄入
+
+*分析流
+
+*每个事件转化处理
+
 # <a name="User Case"></a>User Case
 
 <div align=center><img width="900" height="" src="userguide/image/usecase.png"/></div>
 
 -------
+# <a name="社群贡献"></a>社群贡献
++ QQ群: 34782297
++ [联系我们](mailto:zhangb2002@163.com)
+-------
 
-[云框架](ABOUT.md)系列主题，遵循[APACHE LICENSE 2.0](LICENSE.md)协议发布。
+遵循[APACHE LICENSE 2.0](LICENSE.md)协议发布。
